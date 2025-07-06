@@ -75,7 +75,7 @@
         <h5 class="">Quiz Interaktif Sel Hewan</h5>
     </div>
     <div class="row gap-2 mx-0">
-        <div class="col-md-9 col-sm-12 bg-white p-3" wire:ignore>
+        <div class="col-lg-9 col-md-12 bg-white p-3" wire:ignore>
             <div class="puzzle-container">
                 <div class="image-wrapper mt-5 mx-auto">
 
@@ -87,94 +87,70 @@
 
                     <svg class="overlay-line" xmlns="http://www.w3.org/2000/svg">
                         @for ($i = 1; $i
-                        <= 16; $i++) <line id="mark-line-{{ $i }}" x1="0" y1="0" x2="0" y2="0" stroke="red"
+                        <= 12; $i++) <line id="mark-line-{{ $i }}" x1="0" y1="0" x2="0" y2="0" stroke="red"
                             stroke-width="2" />
                         @endfor
                     </svg>
 
-                    <!-- Target point on the image (destination) -->
-                    <div id="target-point-1" class="target-point" style="left: 250px; top: 160px;"></div>
-                    <div id="target-point-2" class="target-point" style="left: 320px; top: 130px;"></div>
-                    <div id="target-point-3" class="target-point" style="left: 340px; top: 145px;"></div>
-
                     <!-- Drop zone (source of line) -->
                     <div style="left: 100px; top: 10px; position: absolute;">
-                        <div class="drop-zone" data-answer="1">RE Kasar</div>
+                        <div class="drop-zone" data-answer="1">Nukleus</div>
                     </div>
+                    <div id="target-point-1" class="target-point" style="left: 250px; top: 130px;"></div>
+
                     <div style="left: 300px; top: 10px; position: absolute;">
-                        <div class="drop-zone" data-answer="2">Ribosom</div>
+                        <div class="drop-zone" data-answer="2">Lisosom</div>
                     </div>
+                    <div id="target-point-2" class="target-point" style="left: 365px; top: 125px;"></div>
+
                     <div style="right: 65px; top: 80px; position: absolute;">
-                        <div class="drop-zone" data-answer="3">Peroksiom</div>
+                        <div class="drop-zone" data-answer="3">RE Halus</div>
                     </div>
+                    <div id="target-point-3" class="target-point" style="left: 350px; top: 170px;"></div>
 
                     <!-- ========== LEFT SIDE LABELS ========== -->
                     <div id="drop-zone-4" class="drop-zone draggable" data-answer="4" style="left: -70px; top: 80px;">
-                        Mitokondria
+                        Nukleolus
                     </div>
-                    <div id="target-point-4" class="target-point draggable" style="left: 150px; top: 150px;"></div>
+                    <div id="target-point-4" class="target-point draggable" style="left: 280px; top: 150px;"></div>
 
-                    <div id="drop-zone-5" class="drop-zone draggable" data-answer="5" style="left: -70px; top: 140px;">
-                        Amyloplas
+                    <div id="drop-zone-5" class="drop-zone draggable" data-answer="5" style="left: -70px; top: 180px;">
+                        Ribosom
                     </div>
-                    <div id="target-point-5" class="target-point draggable" style="left: 150px; top: 200px;"></div>
+                    <div id="target-point-5" class="target-point draggable" style="left: 180px; top: 200px;"></div>
 
-                    <div id="drop-zone-6" class="drop-zone draggable" data-answer="6" style="left: -70px; top: 200px;">
-                        Beppide
-                        Kristal</div>
-                    <div id="target-point-6" class="target-point draggable" style="left: 175px; top: 235px;"></div>
+                    <div id="drop-zone-6" class="drop-zone draggable" data-answer="6" style="left: -70px; top: 270px;">
+                        Badan Golgi</div>
+                    <div id="target-point-6" class="target-point draggable" style="left: 175px; top: 260px;"></div>
 
-                    <div id="drop-zone-7" class="drop-zone draggable" data-answer="7" style="left: -70px; top: 260px;">
-                        Vakuola
+                    <div id="drop-zone-7" class="drop-zone draggable" data-answer="7" style="left: -40px; top: 370px;">
+                        Sitoplasma
                     </div>
-                    <div id="target-point-7" class="target-point draggable" style="left: 220px; top: 290px;"></div>
+                    <div id="target-point-7" class="target-point draggable" style="left: 150px; top: 305px;"></div>
 
-                    <div id="drop-zone-8" class="drop-zone draggable" data-answer="8" style="left: -70px; top: 320px;">
-                        Kloroplas
+                    <div id="drop-zone-8" class="drop-zone draggable" data-answer="8" style="left: 150px; top: 420px;">
+                        Membran Plasma
                     </div>
-                    <div id="target-point-8" class="target-point draggable" style="left: 160px; top: 330px;"></div>
+                    <div id="target-point-8" class="target-point draggable" style="left: 200px; top: 340px;"></div>
 
-                    <div id="drop-zone-9" class="drop-zone draggable" data-answer="9" style="left: -70px; top: 380px;">
-                        Druse
-                        Kristal</div>
-                    <div id="target-point-9" class="target-point draggable" style="left: 240px; top: 340px;"></div>
+                    <div id="drop-zone-9" class="drop-zone draggable" data-answer="9" style="right: 30px; top: 420px;">
+                        Mitokondria</div>
+                    <div id="target-point-9" class="target-point draggable" style="left: 300px; top: 310px;"></div>
 
                     <div id="drop-zone-10" class="drop-zone draggable" data-answer="10"
-                        style="left: -70px; top: 460px;">Badan
-                        Golgi</div>
-                    <div id="target-point-10" class="target-point draggable" style="left: 160px; top: 400px;"></div>
+                        style="right: -70px; top: 330px;">Sentriol</div>
+                    <div id="target-point-10" class="target-point draggable" style="left: 320px; top: 260px;"></div>
 
                     <!-- ========== RIGHT SIDE LABELS ========== -->
                     <div id="drop-zone-11" class="drop-zone draggable" data-answer="11"
-                        style="right: -85px; top: 140px;">Nukleus
+                        style="right: -85px; top: 170px;">RE Kasar
                     </div>
-                    <div id="target-point-11" class="target-point draggable" style="left: 320px; top: 180px;"></div>
+                    <div id="target-point-11" class="target-point draggable" style="left: 340px; top: 240px;"></div>
 
                     <div id="drop-zone-12" class="drop-zone draggable" data-answer="12"
-                        style="right: -85px; top: 200px;">
-                        Nukleolus</div>
-                    <div id="target-point-12" class="target-point draggable" style="left: 300px; top: 200px;"></div>
-
-                    <div id="drop-zone-13" class="drop-zone draggable" data-answer="13"
-                        style="right: -85px; top: 255px;">RE Halus
-                    </div>
-                    <div id="target-point-13" class="target-point draggable" style="left: 350px; top: 240px;"></div>
-
-                    <div id="drop-zone-14" class="drop-zone draggable" data-answer="14"
-                        style="right: -85px; top: 310px;">
-                        Sitoplasma</div>
-                    <div id="target-point-14" class="target-point draggable" style="left: 368px; top: 300px;"></div>
-
-                    <div id="drop-zone-15" class="drop-zone draggable" data-answer="15"
-                        style="right: -85px; top: 370px;">Membran
-                        Sel</div>
-                    <div id="target-point-15" class="target-point draggable" style="left: 368px; top: 400px;"></div>
-
-                    <div id="drop-zone-16" class="drop-zone draggable" data-answer="16"
-                        style="right: -85px; top: 450px;">Dinding
-                        Sel</div>
-                    <div id="target-point-16" class="target-point draggable" style="left: 380px; top: 450px;"></div>
-
+                        style="right: -85px; top: 250px;">
+                        Mikrotubul</div>
+                    <div id="target-point-12" class="target-point draggable" style="left: 390px; top: 270px;"></div>
 
                 </div>
 
@@ -182,22 +158,18 @@
 
             </div>
             <div class="pieces mt-5 wrap row gap-2 align-items-center justify-content-center">
-                <div class="piece" draggable="true" data-id="1">RE Kasar</div>
-                <div class="piece" draggable="true" data-id="2">Ribosom</div>
-                <div class="piece" draggable="true" data-id="3">Peroksiom</div>
-                <div class="piece" draggable="true" data-id="4">Mitokondria</div>
-                <div class="piece" draggable="true" data-id="5">Amyloplas</div>
-                <div class="piece" draggable="true" data-id="6">Beppide Kristal </div>
-                <div class="piece" draggable="true" data-id="7">Vakuola</div>
-                <div class="piece" draggable="true" data-id="8">Kloroplas</div>
-                <div class="piece" draggable="true" data-id="9">Druse Kristal</div>
-                <div class="piece" draggable="true" data-id="10">Badan Golgi</div>
-                <div class="piece" draggable="true" data-id="11">Nukleus</div>
-                <div class="piece" draggable="true" data-id="12">Nukleolus</div>
-                <div class="piece" draggable="true" data-id="13">RE Halus</div>
-                <div class="piece" draggable="true" data-id="14">Sitoplasma</div>
-                <div class="piece" draggable="true" data-id="15">Membran Sel</div>
-                <div class="piece" draggable="true" data-id="16">Dinding Sel</div>
+                <div class="piece" draggable="true" data-id="1">Nukleus</div>
+                <div class="piece" draggable="true" data-id="2">Lisosom</div>
+                <div class="piece" draggable="true" data-id="3">RE Halus</div>
+                <div class="piece" draggable="true" data-id="4">Nukleolus</div>
+                <div class="piece" draggable="true" data-id="5">Ribosom</div>
+                <div class="piece" draggable="true" data-id="6">Badan Golgi </div>
+                <div class="piece" draggable="true" data-id="7">Sitoplasma</div>
+                <div class="piece" draggable="true" data-id="8">Membran Plasma</div>
+                <div class="piece" draggable="true" data-id="9">Mitokondria</div>
+                <div class="piece" draggable="true" data-id="10">Sentriol</div>
+                <div class="piece" draggable="true" data-id="11">RE Kasar</div>
+                <div class="piece" draggable="true" data-id="12">Mikrotubul</div>
             </div>
 
             <p id="result"></p>
@@ -242,12 +214,12 @@
                 </thead>
                 <tbody>
                     @foreach ($userQuizResults as $i => $item)
-                        <tr>
-                            <th scope="row">{{$i + 1}}</th>
-                            <th class="fw-light text-success">{{$item->correct_count}}</th>
-                            <th class="fw-light text-danger">{{$item->wrong_count}}</th>
-                            <th class="fw-light">{{$item->point}}</th>
-                        </tr>
+                    <tr>
+                        <th scope="row">{{$i + 1}}</th>
+                        <th class="fw-light text-success">{{$item->correct_count}}</th>
+                        <th class="fw-light text-danger">{{$item->wrong_count}}</th>
+                        <th class="fw-light">{{ (int)($item->point * 100) }}</th>
+                    </tr>
                     @endforeach
                 </tbody>
             </table>
@@ -258,91 +230,91 @@
 @push('scripts')
 <script>
     const pieces = document.querySelectorAll('.piece');
-const dropZones = document.querySelectorAll('.drop-zone');
-const result = document.getElementById('result');
+    const dropZones = document.querySelectorAll('.drop-zone');
 
-const labelCorrect = document.getElementById('label-correct');
-const labelWrong = document.getElementById('label-wrong');
-const inputCorrect = document.getElementById('input-correct');
-const inputWrong = document.getElementById('input-wrong');
+    pieces.forEach(piece => {
+    piece.addEventListener('dragstart', dragStart);
+    });
 
-pieces.forEach(piece => {
-  piece.addEventListener('dragstart', dragStart);
-});
+    dropZones.forEach(zone => {
+    zone.addEventListener('dragover', dragOver);
+    zone.addEventListener('drop', dropPiece);
+    });
 
-dropZones.forEach(zone => {
-  zone.addEventListener('dragover', dragOver);
-  zone.addEventListener('drop', dropPiece);
-});
+    function dragStart(e) {
+    e.dataTransfer.setData("text/plain", e.target.dataset.id);
+    }
 
-function dragStart(e) {
-  e.dataTransfer.setData("text/plain", e.target.dataset.id);
-}
-
-function dragOver(e) {
-  e.preventDefault();
-}
-
-function dropPiece(e) {
+    function dragOver(e) {
     e.preventDefault();
-    const draggedId = e.dataTransfer.getData("text/plain");
-    const correctAnswer = e.target.dataset.answer;
-
-    if (e.target.classList.contains('filled') && e.target.style.backgroundColor == "#c8f7c5") {
-        alert("This zone is already filled!");
-        return;
     }
 
-    const draggedElement = document.querySelector(`.piece[data-id="${draggedId}"]`);
-    e.target.classList.add('filled');
-    draggedElement.remove();
+    function dropPiece(e) {
+        e.preventDefault();
 
-    if (draggedId === correctAnswer) {
-        e.target.style.backgroundColor = "#c8f7c5";
-        e.target.textContent = draggedElement.textContent;
+        const labelCorrect = document.getElementById('label-correct');
+        const labelWrong = document.getElementById('label-wrong');
+        const inputCorrect = document.getElementById('input-correct');
+        const inputWrong = document.getElementById('input-wrong');
 
-        Livewire.dispatch('updateAnswers', {
-            correct: parseInt(labelCorrect.innerText) + 1,
-            wrong: parseInt(labelWrong.innerText)
-        });
-    } else {
-        e.target.style.backgroundColor = "#f7c5c5";
+        const draggedId = e.dataTransfer.getData("text/plain");
+        const correctAnswer = e.target.dataset.answer;
 
-        Livewire.dispatch('updateAnswers', {
-            correct: parseInt(labelCorrect.innerText),
-            wrong: parseInt(labelWrong.innerText) + 1
-        });
+        if (e.target.classList.contains('filled') && e.target.classList.contains('success')) {
+            return;
+        }
+
+        const draggedElement = document.querySelector(`.piece[data-id="${draggedId}"]`);
+        e.target.classList.add('filled');
+        draggedElement.remove();
+
+        if (draggedId === correctAnswer) {
+            e.target.style.backgroundColor = "#c8f7c5";
+            e.target.textContent = draggedElement.textContent;
+            e.target.classList.add('success');
+
+            Livewire.dispatch('updateAnswers', {
+                correct: parseInt(labelCorrect.innerText) + 1,
+                wrong: parseInt(labelWrong.innerText)
+            });
+        } else {
+            e.target.style.backgroundColor = "#f7c5c5";
+
+            Livewire.dispatch('updateAnswers', {
+                correct: parseInt(labelCorrect.innerText),
+                wrong: parseInt(labelWrong.innerText) + 1
+            });
+        }
     }
-}
 
 
-function drawLineBetween(dropSelector, targetSelector, lineId) {
-  const drop = document.querySelector(dropSelector);
-  const target = document.querySelector(targetSelector);
-  const line = document.getElementById(lineId);
+    function drawLineBetween(dropSelector, targetSelector, lineId) {
+        const drop = document.querySelector(dropSelector);
+        const target = document.querySelector(targetSelector);
+        const line = document.getElementById(lineId);
 
-  const dropRect = drop.getBoundingClientRect();
-  const targetRect = target.getBoundingClientRect();
-  const svg = line.closest('svg');
-  const svgRect = svg.getBoundingClientRect();
+        const dropRect = drop.getBoundingClientRect();
+        const targetRect = target.getBoundingClientRect();
+        const svg = line.closest('svg');
+        const svgRect = svg.getBoundingClientRect();
 
-  // Calculate center positions
-  const x1 = dropRect.left + dropRect.width / 2 - svgRect.left;
-  const y1 = dropRect.top + dropRect.height / 2 - svgRect.top;
-  const x2 = targetRect.left + targetRect.width / 2 - svgRect.left;
-  const y2 = targetRect.top + targetRect.height / 2 - svgRect.top;
+        // Calculate center positions
+        const x1 = dropRect.left + dropRect.width / 2 - svgRect.left;
+        const y1 = dropRect.top + dropRect.height / 2 - svgRect.top;
+        const x2 = targetRect.left + targetRect.width / 2 - svgRect.left;
+        const y2 = targetRect.top + targetRect.height / 2 - svgRect.top;
 
-  line.setAttribute('x1', x1);
-  line.setAttribute('y1', y1);
-  line.setAttribute('x2', x2);
-  line.setAttribute('y2', y2);
-}
-
-// Optional: Auto draw line on load (if already placed)
-window.addEventListener('livewire:initialized', () => {
-    for (let i = 1; i <= 16; i++) {
-        drawLineBetween('.drop-zone[data-answer="'+i+'"]', `#target-point-${i}`, `mark-line-${i}`);
+        line.setAttribute('x1', x1);
+        line.setAttribute('y1', y1);
+        line.setAttribute('x2', x2);
+        line.setAttribute('y2', y2);
     }
-});
+
+    // Optional: Auto draw line on load (if already placed)
+    window.addEventListener('livewire:initialized', () => {
+        for (let i = 1; i <= 12; i++) {
+            drawLineBetween('.drop-zone[data-answer="'+i+'"]', `#target-point-${i}`, `mark-line-${i}`);
+        }
+    });
 </script>
 @endpush

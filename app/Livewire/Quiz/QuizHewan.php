@@ -14,7 +14,7 @@ class QuizHewan extends Component
     public bool $canSave = false;
     public $userQuizResults;
     public static string $type = 'sel hewan';
-    private $totalPoint = 16;
+    private $totalPoint = 12;
 
     public function mount(){
         $this->userQuizResults = UserQuizResult::where('user_id', Auth::user()->id)

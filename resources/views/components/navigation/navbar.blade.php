@@ -41,10 +41,10 @@ $user = Illuminate\Support\Facades\Auth::user();
         class="accordion-collapse collapse {{ request()->routeIs('quiz.*') ? 'show' : '' }}">
         <div class="accordion-body">
           <ul class="nav nav-pills mb-auto flex-column">
-            <x-navigation.navlink :href="route('quiz.tumbuhan')" :active="request()->routeIs('quiz.tumbuhan')">
+            <x-navigation.navlink :navigate="false" :href="route('quiz.tumbuhan')" :active="request()->routeIs('quiz.tumbuhan')">
               Tumbuhan
             </x-navigation.navlink>
-            <x-navigation.navlink :href="route('quiz.hewan')" :active="request()->routeIs('quiz.hewan')">Hewan
+            <x-navigation.navlink :navigate="false" :href="route('quiz.hewan')" :active="request()->routeIs('quiz.hewan')">Hewan
             </x-navigation.navlink>
           </ul>
         </div>

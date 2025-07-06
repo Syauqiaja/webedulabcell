@@ -246,7 +246,7 @@
                             <th scope="row">{{$i + 1}}</th>
                             <th class="fw-light text-success">{{$item->correct_count}}</th>
                             <th class="fw-light text-danger">{{$item->wrong_count}}</th>
-                            <th class="fw-light">{{$item->point}}</th>
+                            <th class="fw-light">{{ (int)($item->point * 100) }}</th>
                         </tr>
                     @endforeach
                 </tbody>
@@ -284,59 +284,65 @@ function dragOver(e) {
 }
 
 function dropPiece(e) {
-    e.preventDefault();
-    const draggedId = e.dataTransfer.getData("text/plain");
-    const correctAnswer = e.target.dataset.answer;
+        e.preventDefault();
 
-    if (e.target.classList.contains('filled') && e.target.style.backgroundColor == "#c8f7c5") {
-        alert("This zone is already filled!");
-        return;
+        const labelCorrect = document.getElementById('label-correct');
+        const labelWrong = document.getElementById('label-wrong');
+        const inputCorrect = document.getElementById('input-correct');
+        const inputWrong = document.getElementById('input-wrong');
+
+        const draggedId = e.dataTransfer.getData("text/plain");
+        const correctAnswer = e.target.dataset.answer;
+
+        if (e.target.classList.contains('filled') && e.target.classList.contains('success')) {
+            return;
+        }
+
+        const draggedElement = document.querySelector(`.piece[data-id="${draggedId}"]`);
+        e.target.classList.add('filled');
+        draggedElement.remove();
+
+        if (draggedId === correctAnswer) {
+            e.target.style.backgroundColor = "#c8f7c5";
+            e.target.textContent = draggedElement.textContent;
+            e.target.classList.add('success');
+
+            Livewire.dispatch('updateAnswers', {
+                correct: parseInt(labelCorrect.innerText) + 1,
+                wrong: parseInt(labelWrong.innerText)
+            });
+        } else {
+            e.target.style.backgroundColor = "#f7c5c5";
+
+            Livewire.dispatch('updateAnswers', {
+                correct: parseInt(labelCorrect.innerText),
+                wrong: parseInt(labelWrong.innerText) + 1
+            });
+        }
     }
 
-    const draggedElement = document.querySelector(`.piece[data-id="${draggedId}"]`);
-    e.target.classList.add('filled');
-    draggedElement.remove();
 
-    if (draggedId === correctAnswer) {
-        e.target.style.backgroundColor = "#c8f7c5";
-        e.target.textContent = draggedElement.textContent;
+    function drawLineBetween(dropSelector, targetSelector, lineId) {
+        const drop = document.querySelector(dropSelector);
+        const target = document.querySelector(targetSelector);
+        const line = document.getElementById(lineId);
 
-        Livewire.dispatch('updateAnswers', {
-            correct: parseInt(labelCorrect.innerText) + 1,
-            wrong: parseInt(labelWrong.innerText)
-        });
-    } else {
-        e.target.style.backgroundColor = "#f7c5c5";
+        const dropRect = drop.getBoundingClientRect();
+        const targetRect = target.getBoundingClientRect();
+        const svg = line.closest('svg');
+        const svgRect = svg.getBoundingClientRect();
 
-        Livewire.dispatch('updateAnswers', {
-            correct: parseInt(labelCorrect.innerText),
-            wrong: parseInt(labelWrong.innerText) + 1
-        });
+        // Calculate center positions
+        const x1 = dropRect.left + dropRect.width / 2 - svgRect.left;
+        const y1 = dropRect.top + dropRect.height / 2 - svgRect.top;
+        const x2 = targetRect.left + targetRect.width / 2 - svgRect.left;
+        const y2 = targetRect.top + targetRect.height / 2 - svgRect.top;
+
+        line.setAttribute('x1', x1);
+        line.setAttribute('y1', y1);
+        line.setAttribute('x2', x2);
+        line.setAttribute('y2', y2);
     }
-}
-
-
-function drawLineBetween(dropSelector, targetSelector, lineId) {
-  const drop = document.querySelector(dropSelector);
-  const target = document.querySelector(targetSelector);
-  const line = document.getElementById(lineId);
-
-  const dropRect = drop.getBoundingClientRect();
-  const targetRect = target.getBoundingClientRect();
-  const svg = line.closest('svg');
-  const svgRect = svg.getBoundingClientRect();
-
-  // Calculate center positions
-  const x1 = dropRect.left + dropRect.width / 2 - svgRect.left;
-  const y1 = dropRect.top + dropRect.height / 2 - svgRect.top;
-  const x2 = targetRect.left + targetRect.width / 2 - svgRect.left;
-  const y2 = targetRect.top + targetRect.height / 2 - svgRect.top;
-
-  line.setAttribute('x1', x1);
-  line.setAttribute('y1', y1);
-  line.setAttribute('x2', x2);
-  line.setAttribute('y2', y2);
-}
 
 // Optional: Auto draw line on load (if already placed)
 window.addEventListener('livewire:initialized', () => {
