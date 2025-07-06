@@ -17,5 +17,11 @@
         @foreach ($activities as $key => $activity)
             <x-activity-item :activity="$activity" :canEdit="false"/>
         @endforeach
+
+        @if (count($activities) == 0)
+            <div class="m-3 text-center">
+                -- Belum ada aktivitas yang didaftarkan --
+            </div>
+        @endif
     </div>
 </div>

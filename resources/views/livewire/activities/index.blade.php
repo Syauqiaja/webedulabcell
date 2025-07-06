@@ -13,8 +13,14 @@
                 <x-activity-item :activity="$activity" wire:key='{{ $activity->id }}' :canEdit="true">{{$activity->title}}</x-activity-item>
             @else
                 <x-activity-item :activity="$activity" wire:key='{{ $activity->id }}' :canEdit="false">{{$activity->title}}</x-activity-item>
-            @endhaspermission
+            @endhaspermissionp
         @endforeach
+
+        @if (count($activities) == 0)
+            <div class="m-3 text-center">
+                -- Belum ada aktivitas yang didaftarkan --
+            </div>
+        @endif
     </div>
 
     <div class="modal fade" id="createNewModal" tabindex="-1" aria-hidden="true">

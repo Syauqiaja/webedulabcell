@@ -28,8 +28,8 @@ class Detail extends Component
             $query->where('is_completed', true);
         })->count();
 
-        $this->completedMaterials = $completedMaterials / Material::all()->count();
-        $this->completedActivity = $completed->count() / Activity::all()->count();
+        $this->completedMaterials = $completedMaterials / max(1, Material::all()->count());
+        $this->completedActivity = $completed->count() / max(1, Activity::all()->count());
     }
     public function render()
     {
