@@ -27,12 +27,14 @@
                         <small class="text-danger d-block">{{$message}}</small>
                     @enderror
                 </div>
-                <div class="form-check mb-3">
-                    <input class="form-check-input" type="checkbox" wire:model='isAdmin' id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Tetapkan sebagai admin
-                    </label>
-                </div>
+                @hasrole('admin')
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" wire:model='isAdmin' id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Tetapkan sebagai admin
+                        </label>
+                    </div>
+                @endhasrole
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
