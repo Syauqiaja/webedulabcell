@@ -48,7 +48,7 @@
         updateBannerVisibility();
       }
 
-      var buildUrl = "Build";
+      var buildUrl = "build";
       var loaderUrl = buildUrl + "/unity.loader.js";
       var config = {
         arguments: [],
