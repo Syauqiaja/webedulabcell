@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ActivityDeleteController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\UnityController;
 use App\Http\Controllers\UserController;
@@ -34,7 +35,7 @@ Route::get('/', function () {
 Route::middleware('auth')->group(function(){
     Route::get('/home', Home::class)->name('home');
     Route::get('/activity', ActivityIndex::class)->name('activities.index');
-    Route::delete('/activity/{id}', ActivityIndex::class)->name('activities.delete');
+    Route::delete('/activity/{id}', [ActivityDeleteController::class, 'delete'])->name('activities.delete');
     Route::get("/activity/material/{id}/edit", EditMaterial::class)->name('activities.material.edit');
     Route::get("/activity/tests/{type}/{id}/edit", EditTests::class)->name('activities.tests.edit');
     Route::get("/activity/{id}/detail", ActivitiesDetail::class)->name('activities.detail');

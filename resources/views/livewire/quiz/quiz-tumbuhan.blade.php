@@ -99,80 +99,75 @@
 
                     <!-- Drop zone (source of line) -->
                     <div style="left: 100px; top: 10px; position: absolute;">
-                        <div class="drop-zone" data-answer="1">RE Kasar</div>
+                        <div class="drop-zone" data-answer="1">????</div>
                     </div>
                     <div style="left: 300px; top: 10px; position: absolute;">
-                        <div class="drop-zone" data-answer="2">Ribosom</div>
+                        <div class="drop-zone" data-answer="2">????</div>
                     </div>
                     <div style="right: 65px; top: 80px; position: absolute;">
-                        <div class="drop-zone" data-answer="3">Peroksiom</div>
+                        <div class="drop-zone" data-answer="3">????</div>
                     </div>
 
                     <!-- ========== LEFT SIDE LABELS ========== -->
                     <div id="drop-zone-4" class="drop-zone draggable" data-answer="4" style="left: -70px; top: 80px;">
-                        Mitokondria
+                        ????
                     </div>
                     <div id="target-point-4" class="target-point draggable" style="left: 150px; top: 150px;"></div>
 
                     <div id="drop-zone-5" class="drop-zone draggable" data-answer="5" style="left: -70px; top: 140px;">
-                        Amyloplas
+                        ????
                     </div>
                     <div id="target-point-5" class="target-point draggable" style="left: 150px; top: 200px;"></div>
 
                     <div id="drop-zone-6" class="drop-zone draggable" data-answer="6" style="left: -70px; top: 200px;">
-                        Beppide
-                        Kristal</div>
+                        ????</div>
                     <div id="target-point-6" class="target-point draggable" style="left: 175px; top: 235px;"></div>
 
                     <div id="drop-zone-7" class="drop-zone draggable" data-answer="7" style="left: -70px; top: 260px;">
-                        Vakuola
+                        ????
                     </div>
                     <div id="target-point-7" class="target-point draggable" style="left: 220px; top: 290px;"></div>
 
                     <div id="drop-zone-8" class="drop-zone draggable" data-answer="8" style="left: -70px; top: 320px;">
-                        Kloroplas
+                        ????
                     </div>
                     <div id="target-point-8" class="target-point draggable" style="left: 160px; top: 330px;"></div>
 
                     <div id="drop-zone-9" class="drop-zone draggable" data-answer="9" style="left: -70px; top: 380px;">
-                        Druse
-                        Kristal</div>
+                        ????</div>
                     <div id="target-point-9" class="target-point draggable" style="left: 240px; top: 340px;"></div>
 
                     <div id="drop-zone-10" class="drop-zone draggable" data-answer="10"
-                        style="left: -70px; top: 460px;">Badan
-                        Golgi</div>
+                        style="left: -70px; top: 460px;">????</div>
                     <div id="target-point-10" class="target-point draggable" style="left: 160px; top: 400px;"></div>
 
                     <!-- ========== RIGHT SIDE LABELS ========== -->
                     <div id="drop-zone-11" class="drop-zone draggable" data-answer="11"
-                        style="right: -85px; top: 140px;">Nukleus
+                        style="right: -85px; top: 140px;">????
                     </div>
                     <div id="target-point-11" class="target-point draggable" style="left: 320px; top: 180px;"></div>
 
                     <div id="drop-zone-12" class="drop-zone draggable" data-answer="12"
                         style="right: -85px; top: 200px;">
-                        Nukleolus</div>
+                        ????</div>
                     <div id="target-point-12" class="target-point draggable" style="left: 300px; top: 200px;"></div>
 
                     <div id="drop-zone-13" class="drop-zone draggable" data-answer="13"
-                        style="right: -85px; top: 255px;">RE Halus
+                        style="right: -85px; top: 255px;">????
                     </div>
                     <div id="target-point-13" class="target-point draggable" style="left: 350px; top: 240px;"></div>
 
                     <div id="drop-zone-14" class="drop-zone draggable" data-answer="14"
                         style="right: -85px; top: 310px;">
-                        Sitoplasma</div>
+                        ????</div>
                     <div id="target-point-14" class="target-point draggable" style="left: 368px; top: 300px;"></div>
 
                     <div id="drop-zone-15" class="drop-zone draggable" data-answer="15"
-                        style="right: -85px; top: 370px;">Membran
-                        Sel</div>
+                        style="right: -85px; top: 370px;">????</div>
                     <div id="target-point-15" class="target-point draggable" style="left: 368px; top: 400px;"></div>
 
                     <div id="drop-zone-16" class="drop-zone draggable" data-answer="16"
-                        style="right: -85px; top: 450px;">Dinding
-                        Sel</div>
+                        style="right: -85px; top: 450px;">????</div>
                     <div id="target-point-16" class="target-point draggable" style="left: 380px; top: 450px;"></div>
 
 

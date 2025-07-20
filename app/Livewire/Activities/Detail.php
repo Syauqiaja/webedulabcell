@@ -22,7 +22,7 @@ class Detail extends Component
     public function mount(Activity $id, Request $request)
     {
         $this->activity = $id;
-        if(!$this->activity->tests(TestType::PRETEST)->first()->isCompleted()){
+        if(!$this->activity->tests(TestType::PRETEST)->first()?->isCompleted()){
             return redirect()->route('activities.test', ['id' => $id->id, 'type' => TestType::PRETEST]);
         }
 
@@ -31,7 +31,7 @@ class Detail extends Component
         if(filled($request->m)) {
             $material = Material::where("id", $request->m)->first();
         }else{
-            if($this->activity->tests(TestType::LATSOL)->first()->isCompleted()){
+            if($this->activity->tests(TestType::LATSOL)->first()?->isCompleted()){
                 return redirect()->route('activities.test', ['id' => $id->id, 'type' => TestType::POSTTEST]);
             }else if($this->activity->materials()->orderBy('order', 'desc')->first()->userProgress()->first()?->is_completed){
                 return redirect()->route('activities.test', ['id' => $id->id, 'type' => TestType::LATSOL]);

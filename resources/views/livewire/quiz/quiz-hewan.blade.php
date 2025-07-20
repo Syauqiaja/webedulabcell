@@ -94,62 +94,62 @@
 
                     <!-- Drop zone (source of line) -->
                     <div style="left: 100px; top: 10px; position: absolute;">
-                        <div class="drop-zone" data-answer="1">Nukleus</div>
+                        <div class="drop-zone" data-answer="1">????</div>
                     </div>
                     <div id="target-point-1" class="target-point" style="left: 250px; top: 130px;"></div>
 
                     <div style="left: 300px; top: 10px; position: absolute;">
-                        <div class="drop-zone" data-answer="2">Lisosom</div>
+                        <div class="drop-zone" data-answer="2">????</div>
                     </div>
                     <div id="target-point-2" class="target-point" style="left: 365px; top: 125px;"></div>
 
                     <div style="right: 65px; top: 80px; position: absolute;">
-                        <div class="drop-zone" data-answer="3">RE Halus</div>
+                        <div class="drop-zone" data-answer="3">????</div>
                     </div>
                     <div id="target-point-3" class="target-point" style="left: 350px; top: 170px;"></div>
 
                     <!-- ========== LEFT SIDE LABELS ========== -->
                     <div id="drop-zone-4" class="drop-zone draggable" data-answer="4" style="left: -70px; top: 80px;">
-                        Nukleolus
+                        ????
                     </div>
                     <div id="target-point-4" class="target-point draggable" style="left: 280px; top: 150px;"></div>
 
                     <div id="drop-zone-5" class="drop-zone draggable" data-answer="5" style="left: -70px; top: 180px;">
-                        Ribosom
+                        ????
                     </div>
                     <div id="target-point-5" class="target-point draggable" style="left: 180px; top: 200px;"></div>
 
                     <div id="drop-zone-6" class="drop-zone draggable" data-answer="6" style="left: -70px; top: 270px;">
-                        Badan Golgi</div>
+                        ????</div>
                     <div id="target-point-6" class="target-point draggable" style="left: 175px; top: 260px;"></div>
 
                     <div id="drop-zone-7" class="drop-zone draggable" data-answer="7" style="left: -40px; top: 370px;">
-                        Sitoplasma
+                        ????
                     </div>
                     <div id="target-point-7" class="target-point draggable" style="left: 150px; top: 305px;"></div>
 
                     <div id="drop-zone-8" class="drop-zone draggable" data-answer="8" style="left: 150px; top: 420px;">
-                        Membran Plasma
+                        ????
                     </div>
                     <div id="target-point-8" class="target-point draggable" style="left: 200px; top: 340px;"></div>
 
                     <div id="drop-zone-9" class="drop-zone draggable" data-answer="9" style="right: 30px; top: 420px;">
-                        Mitokondria</div>
+                        ????</div>
                     <div id="target-point-9" class="target-point draggable" style="left: 300px; top: 310px;"></div>
 
                     <div id="drop-zone-10" class="drop-zone draggable" data-answer="10"
-                        style="right: -70px; top: 330px;">Sentriol</div>
+                        style="right: -70px; top: 330px;">????</div>
                     <div id="target-point-10" class="target-point draggable" style="left: 320px; top: 260px;"></div>
 
                     <!-- ========== RIGHT SIDE LABELS ========== -->
                     <div id="drop-zone-11" class="drop-zone draggable" data-answer="11"
-                        style="right: -85px; top: 170px;">RE Kasar
+                        style="right: -85px; top: 170px;">????
                     </div>
                     <div id="target-point-11" class="target-point draggable" style="left: 340px; top: 240px;"></div>
 
                     <div id="drop-zone-12" class="drop-zone draggable" data-answer="12"
                         style="right: -85px; top: 250px;">
-                        Mikrotubul</div>
+                        ????</div>
                     <div id="target-point-12" class="target-point draggable" style="left: 390px; top: 270px;"></div>
 
                 </div>

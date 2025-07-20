@@ -2,14 +2,19 @@
 $user = Illuminate\Support\Facades\Auth::user();
 @endphp
 
-<div id="sidebarMenu" class="col-md-3 col-lg-2 d-block d-flex flex-column bg-white sidebar position-fixed h-100 p-3">
-  <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-primary text-decoration-none">
-    <i class="bi bi-hexagon-half fs-2 me-2"></i>
-    <span class="fs-4 fw-bold">Edulab Cell</span>
-  </a>
-  <hr>
-  <ul class="nav nav-pills mb-auto flex-column">
-
+<nav id="sidebarMenu" class="sidebar bg-white p-3">
+  <div class="d-flex justify-content-between align-items-center">
+    <a href="/" class="d-flex align-items-center mb-3 link-primary text-decoration-none d-none d-md-flex">
+      <i class="bi bi-hexagon-half fs-2 me-2"></i>
+      <span class="fs-4 fw-bold">Edulab Cell</span>
+    </a>
+    <!-- Close button for mobile -->
+    <button class="btn btn-sm btn-outline-secondary d-md-none" id="sidebarCloseBtn" aria-label="Close sidebar">
+      <i class="bi bi-x fs-5"></i>
+    </button>
+  </div>
+  <hr class="d-none d-md-block">
+  <ul class="nav nav-pills flex-column mb-auto mt-4 mt-md-0">
     <x-navigation.navlink :icon="'bi-house'" :href="route('home')" :active="request()->routeIs('home')">Dashboard
     </x-navigation.navlink>
     <x-navigation.navlink :icon="'bi-book'" :href="route('activities.index')"
@@ -20,60 +25,59 @@ $user = Illuminate\Support\Facades\Auth::user();
       Member
     </x-navigation.navlink>
     @endif
-    {{-- <x-navigation.navlink :icon="'bi-card-text'" :href="route('article.list')" :active="request()->routeIs('article.*')">
+    {{-- <x-navigation.navlink :icon="'bi-card-text'" :href="route('article.list')"
+      :active="request()->routeIs('article.*')">
       Artikel
     </x-navigation.navlink> --}}
-
-    <x-navigation.navlink :icon="'bi-hexagon'" :href="route('viewer')" :active="request()->routeIs('viewer')">Virtual Lab
+    <x-navigation.navlink :icon="'bi-hexagon'" :href="route('viewer')" :active="request()->routeIs('viewer')">Virtual
+      Lab
     </x-navigation.navlink>
-    <li class="accordion nav-item">
-      <h2 class="">
-        <button class="nav-link accordion-button px-3 text-primary {{ request()->routeIs('quiz.*') ? '' : 'collapsed' }} d-flex align-items-center" type="button"
-          data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+    <li class="nav-item accordion">
+      <h2 class="accordion-header">
+        <button
+          class="accordion-button nav-link px-3 text-primary d-flex align-items-center {{ request()->routeIs('quiz.*') ? '' : 'collapsed' }}"
+          type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne"
+          aria-expanded="{{ request()->routeIs('quiz.*') ? 'true' : 'false' }}"
           aria-controls="panelsStayOpen-collapseOne">
-
-          <i class="bi bi-puzzle fs-3 ms-0"></i><span class="fs-6 ms-2 fw-light">
-            Quiz
-          </span>
+          <i class="bi bi-puzzle fs-3"></i>
+          <span class="ms-2 fs-6 fw-light">Quiz</span>
         </button>
       </h2>
       <div id="panelsStayOpen-collapseOne"
         class="accordion-collapse collapse {{ request()->routeIs('quiz.*') ? 'show' : '' }}">
-        <div class="accordion-body">
-          <ul class="nav nav-pills mb-auto flex-column">
-            <x-navigation.navlink :navigate="false" :href="route('quiz.tumbuhan')" :active="request()->routeIs('quiz.tumbuhan')">
+        <div class="accordion-body px-0">
+          <ul class="nav nav-pills flex-column">
+            <x-navigation.navlink :navigate="false" :href="route('quiz.tumbuhan')"
+              :active="request()->routeIs('quiz.tumbuhan')">
               Tumbuhan
             </x-navigation.navlink>
-            <x-navigation.navlink :navigate="false" :href="route('quiz.hewan')" :active="request()->routeIs('quiz.hewan')">Hewan
+            <x-navigation.navlink :navigate="false" :href="route('quiz.hewan')"
+              :active="request()->routeIs('quiz.hewan')">Hewan
             </x-navigation.navlink>
           </ul>
         </div>
       </div>
-      <div class="">
-      </div>
     </li>
   </ul>
-  <hr>
-  <div class="dropdown ">
-    <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2"
+  <hr class="mt-5">
+  <div class="dropdown">
+    <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser"
       data-bs-toggle="dropdown" aria-expanded="false">
-      <img src="{{ $user->photo ? storage_url($user->photo) : asset('assets/default_avatar.jpg') }}" alt="" width="32"
-        height="32" class="rounded-circle me-2">
-      <strong>{{$user->name}}</strong>
+      <img src="{{ $user->photo ? storage_url($user->photo) : asset('assets/default_avatar.jpg') }}" alt="User Avatar"
+        width="32" height="32" class="rounded-circle me-2">
+      <strong>{{ $user->name }}</strong>
     </a>
-    <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
+    <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser">
       <li><a class="dropdown-item" href="{{ route('user.detail', ['user' => Auth::user()->id]) }}">Profile</a></li>
       <li>
         <hr class="dropdown-divider">
       </li>
-      <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#logoutModal">Sign out</a></li>
-      {{-- <li><a class="dropdown-item"
-          onclick="Livewire.dispatch('openLogoutConfirmation', { component: 'modals.logout-confirmation-modal' })">Sign
-          out</a></li> --}}
+      <li>
+        <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#logoutModal">Sign out</a>
+      </li>
     </ul>
   </div>
-
-</div>
+</nav>
 
 @pushOnce('modals')
 <div class="modal fade" id="logoutModal" tabindex="1" aria-labelledby="logoutModalLabel" aria-hidden="true">
